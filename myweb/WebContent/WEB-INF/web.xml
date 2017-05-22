@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<display-name>myweb</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<!-- 초기파라미터- 공용(web component- servlet/jsp/filter/listener 들이 같이 사용하는 초기파라미터) -->
+
+	<context-param>
+		<param-name>phone number</param-name>
+		<param-value>031-111-2222</param-value>
+
+	</context-param>
+
+	<context-param>
+		<param-name>admin email</param-name>
+		<param-value>admin@kosta.or.kr</param-value>
+	</context-param>
+
+
+
+
+	<!--Listener 클래스 객체 등록 -->
+	<listener>
+		<listener-class>servlet.listener.MyListener</listener-class>
+	</listener>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--cookie 객체 등록 -->
+	<servlet>
+		<servlet-name>GetCookieServlet</servlet-name>
+		<servlet-class>servlet.cookie.GetCookieServlet</servlet-class>
+
+
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GetCookieServlet</servlet-name>
+		<url-pattern>/cookie/getcookie</url-pattern>
+	</servlet-mapping>
+
+
+	<!--cookie 1객체 등록 -->
+	<servlet>
+		<servlet-name>SetCookie1Servlet</servlet-name>
+		<servlet-class>servlet.cookie.SetCookie1Servlet</servlet-class>
+
+
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SetCookie1Servlet</servlet-name>
+		<url-pattern>/cookie/setcookie1</url-pattern>
+	</servlet-mapping>
+
+	<!--cookie 2 객체 등록 -->
+	<servlet>
+		<servlet-name>SetCookie2Servlet</servlet-name>
+		<servlet-class>servlet.cookie.SetCookie2Servlet</servlet-class>
+
+
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SetCookie2Servlet</servlet-name>
+		<url-pattern>/cookie/setcookie2</url-pattern>
+	</servlet-mapping>
+
+	<!--cookie 객체 등록 -->
+	<servlet>
+		<servlet-name>SetCookie3Servlet</servlet-name>
+		<servlet-class>servlet.cookie.SetCookie3Servlet</servlet-class>
+
+
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SetCookie3Servlet</servlet-name>
+		<url-pattern>/cookie/setcookie3</url-pattern>
+	</servlet-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--cookie 객체 등록 -->
+	<servlet>
+		<servlet-name>StackNumberServlet</servlet-name>
+		<servlet-class>servlet.cookie.stacknum.StackNumberServlet</servlet-class>
+
+
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>StackNumberServlet</servlet-name>
+		<url-pattern>/cookie/stacknum/stackcookie</url-pattern>
+	</servlet-mapping>
+
+
+
+	<!--cookie 1객체 등록 -->
+	<servlet>
+		<servlet-name>ShowStackNumberServlet</servlet-name>
+		<servlet-class>servlet.cookie.stacknum.ShowStackNumberServlet</servlet-class>
+
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ShowStackNumberServlet</servlet-name>
+		<url-pattern>/cookie/stacknum/showcookie</url-pattern>
+	</servlet-mapping>
+
+
+	<!--cookie 2 객체 등록 -->
+	<servlet>
+		<servlet-name>RemoveStackNumberServlet</servlet-name>
+		<servlet-class>servlet.cookie.stacknum.RemoveStackNumberServlet</servlet-class>
+
+
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RemoveStackNumberServlet</servlet-name>
+		<url-pattern>/cookie/stacknum/setcookie2</url-pattern>
+	</servlet-mapping>
+
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--CounterServlet 객체 등록 -->
+	<servlet>
+
+		<servlet-name>counter</servlet-name>
+		<servlet-class>servlet.lifecycle.CounterServlet</servlet-class>
+		<!--초기 파라미터 등록 -->
+		<init-param>
+			<param-name>filePath</param-name>
+			<param-value>C:\Java\counter.dat</param-value>
+		</init-param>
+
+
+
+	</servlet>
+	<!--name:counter 서블릿 요청 URL 등록 -->
+
+	<servlet-mapping>
+		<servlet-name>counter</servlet-name>
+		<url-pattern>/lifecycle/counter</url-pattern>
+	</servlet-mapping>
+
+	<!-- web.xml은 톰켓이 시작할시점에 읽는것이므로 톰켓을 restart해야 한다. -->
+
+
+
+	<!--ReadQueryStringServlet 객체 등록 -->
+	<servlet>
+
+		<servlet-name>read querystring</servlet-name>
+		<servlet-class>servlet.requestparam.ReadQueryStringServlet</servlet-class>
+	</servlet>
+
+	<!--name: ReadQueryStringServlet 서블릿 요청 URL 등록 -->
+
+	<servlet-mapping>
+		<servlet-name>read querystring</servlet-name>
+		<url-pattern>/form/readqs</url-pattern>
+	</servlet-mapping>
+
+	<!--ReadQueryStringServlet 객체 등록 -->
+	<servlet>
+		<servlet-name>intro</servlet-name>
+		<servlet-class>servlet.requestparam.FormServlet</servlet-class>
+	</servlet>
+
+	<!--name: ReadQueryStringServlet 서블릿 요청 URL 등록 -->
+
+	<servlet-mapping>
+		<servlet-name>intro</servlet-name>
+		<url-pattern>/form/formServlet</url-pattern>
+	</servlet-mapping>
+
+
+
+</web-app> 
+
+

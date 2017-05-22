@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!--링크로 보내는것은 get방식밖에 없으므로 post방식으로는 보낼수 없다.  -->
+<h2>링크에서 Query String으로 요청파라미터 전달</h2>
+<!-- <a href="http://127.0.0.1:8088/myweb/form/readqs">Read QueryString 서블릿 요청</a><br> -->
+<a href="/myweb/form/readqs?name=김영수&age=20">Read QueryString 서블릿 요청</a><br>
+<a href="/myweb/form/readqs?name=김영수&age=20&name=hong&name=park">
+         Read QueryString 서블릿 요청2</a>
+<!-- <a href="readqs">Read QueryString 서블릿 요청</a>    ./는 생략가능  -->
+
+</body>
+
+<!--html과 web은 같은경로이므로  http부터 ip와 port번호는 안써도된다
+     url뒤에다가 ?붙이고 queryString쓴다.
+    http://ip:port/myweb/form/readqs?name=value&name=value  -->
+</html>
+
+

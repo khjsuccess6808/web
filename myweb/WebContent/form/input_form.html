@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>각종 입력 폼</h1>
+<!-- form 태그- 입력양식들을 묶어주는 태그: 요청할 URL(action)과 요청방식(method) 설정  -->
+<form action="/myweb/form/formServlet" method="post">
+ 
+  이름 : <input type="text" name="name" value="123"><br><!--1줄 텍스트 입력폼(type=text)  value 값추가하면 디폴트값으로 들어간다.-->
+ 패스워드 : <input type="password" name="password"><br>
+ 주소  : <input type="text" name="address" size="50" maxlength="10"><br> 
+ <!--대략 50글자를 보여줄수있는 사이즈가 나온다(글자수제한없고 한번에 보여줄수있는게 50이라는것)
+    .maxlength는 글자수제한 있다   -->
+    
+    <!--라디오 버튼: 여러개중 하나만 선택 하는 선택버튼 :type="radio" 같은 이름끼리 그룹으로 묶인다. 이름이 다르면 묶이지 않는다. -->
+성별: <label for="radio_f">여성:<input type="radio" name="gender" value="여성" id="radio_f"> 
+     <label>남성:<input type="radio" name="gender" value="남성" id="radio_m"></label><br>
+     <!--체크박스 버튼  위의 것과 다른것은 만약 선택한것을 취소하려면 다른걸 눌러야만 하는데 
+     1.Yes/No를 입력받기 위한 선택버튼
+     2.여러개중에 여러개 선택을 위한 선택 버튼.   
+       -->
+   <label for="chk_mail">광고 메일 수신여부</label> <input id="chk_mail" type="checkbox" name="acceptMail" value="yes">  
+     <!--선택하는것은 값을 넣어준다.  -->
+     <!--만약 gender이름을 다르게하면 둘다 읽으므로 둘다 클릭할수 있게한다. 하나만 선택하게 하고 싶으면 이름을 같게한다.  -->
+     <p> <!--br 2개와 같다  -->
+     관심언어를 선택하세요(다중선택 가능)<br>
+     <label for="chk_java">Java</label>
+                   <input type="checkbox" name="language" value="Java" id="chk_java">
+                   
+     <label for="chk_c">C언어</label>
+                   <input type="checkbox" name="language" value="C언어" id="chk_c">
+                   
+     <label for="chk_python">파이썬</label>
+                   <input type="checkbox" name="language" value="python" id="chk_python">
+     <label for="chk_ruby">루비</label>
+                   <input type="checkbox" name="language" value="Ruby" id="chk_ruby">
+     </p> <!--사실 <br>처럼 안닫아도된다.  --> 
+    
+    <!--type="hidden" User(사용자)에게 감춘 상태에서 전송하는 요청파라미터 설정.  --> 
+    <input type="hidden" name="command" value="register"> <!--사용자에게 입력받기위해 내보내는것이 아니라 , 화면만드는사람과 처리하는사람에게만 값을 주고받을때 숨겨진것.  --> 
+     핸드폰 번호
+     <select name="tel1">
+     
+     <option>010</option>
+     <option>011</option>
+     <option>016</option>
+     <option>019</option>
+     
+     </select>
+     
+       상품분류
+     <select name="category" >  <!--name 옆에 multiple   -->
+       <option value="p1">컴퓨터 </option>
+       <option value="p2">가전제품</option>
+       <option value="p3">소프트웨어</option>
+       <!--보여지는내용과 전송되는 내용이 다를경우 option에다가 value속성을 추가한다.  -->
+      </select>
+     
+     <p>
+        설명<br>
+     <textarea rows="10" cols="100" name="intro">기본값</textarea>  <!--여러줄 넣을떄/ 이럴떄는디폴트값을 태그사이에 둔다. 디폴트값 없을경우는 열고 바로 닫아야한다.  -->
+     <!-- 만약  좀 띄어놓거나 하면 공백까지 들어간걸로 됨 -->
+     
+     <p>
+     <input type="submit" value="등록"><!--전송버튼  default값이 '제출'이다.-->
+     <input type="reset" value="초기화"><!--초기화버튼: 입력폼의 값들을 초기화한다.  -->
+     <input type="button" value="그냥 버튼" onclick="alert('안녕하세요');"><!--버튼 모양 :javascript와 연동 --> 
+     
+     <p>
+     <button type="submit">전송버튼</button>   <!--태그이름과 무엇을 하는지가 매칭되는것. 위의 방식과는 똑같다.  -->
+     <button type="reset">초기화버튼</button>
+     <button type="button">버튼</button>
+     
+                                                               
+</form>
+</body>
+</html>
