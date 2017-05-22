@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>helloweb</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  <!--servlet태그: 서블릿 객체를 등록하는 태그  -->
+  <!--HelloServlet 객체 등록  => 톰켓서버에게 알려주는것 -->                        
+  <servlet>
+  <servlet-name>hello</servlet-name>                  <!--만든 객체에 대한 이름/ 한클래스당 여러 객체를 만들수 있으므로  -->
+  <servlet-class>hello.HelloServlet</servlet-class>   <!--1.어떤클래스를 객체만들지 설정  -->
+  </servlet>
+  
+  
+  <!--등록한 HelloServlet을 요청하는 URL 등록 (client가 설정한 방식)  -->
+  <!--사용자(Web Browser)가 /hello URL로 요청하면 이름이 hello인 서블릿 객체가 일한다.-->
+  <servlet-mapping>
+  
+  <servlet-name>hello</servlet-name>      
+  <url-pattern>/hello</url-pattern>   <!--/부터 알려주는데 그다음에 나오는게 Application Root경로를 가리킨다.   -->
+  </servlet-mapping>                  <!--/앞내용은 http://ip:8088/helloweb이다.이 내용은 생략한다고 한다.  -->
+  
+  
+</web-app>
